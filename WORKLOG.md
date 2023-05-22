@@ -11,12 +11,8 @@ info
 info
 
 
-## GROUP MEMBER 2
+## Salaj Rijal
 
-### date x
+### date 05/18/23
+- watched [this video](https://www.youtube.com/watch?v=1S0aBV-Waeo)
 
-info
-
-### date y
-
-info
