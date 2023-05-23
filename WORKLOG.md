@@ -1,15 +1,20 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Sunil Parab
 
-### date x
+### 5/19/23
 
-info
+- Reviewed C coding
+	- watched [this video](https://www.youtube.com/watch?v=ZCVwB6HJ2wk) to understand pointers
+- Watched videos on buffer overflow attacks to understand what they are / how they work
+	- https://www.youtube.com/watch?v=1S0aBV-Waeo
+	- https://www.youtube.com/watch?v=oS2O75H57qU
 
-### date y
+### 5/22/23
 
-info
-
+- Researched how to access memory of other programs in C
+	- Found [this](https://stackoverflow.com/questions/68866194/can-you-access-another-programs-stack-heap-if-you-know-the-address), nothing really useful
+- Tested out doing a buffer overflow attack to better understand them
 
 ## Salaj Rijal
 
@@ -28,4 +33,3 @@ info
 	- https://www.youtube.com/watch?v=TuI2HyG8-iI
 	- https://www.youtube.com/watch?v=hJ8IwyhqzD4&t=8s
 	- https://www.rapid7.com/blog/post/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/
-
