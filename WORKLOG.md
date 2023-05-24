@@ -25,7 +25,7 @@
 - was absent (AP Exam)
 
 ### 05/22/23
-- was absent
+- was absent (sick)
 - read/watched these resources
 	- https://www.youtube.com/watch?v=YVlTDPhTA9U
 	- https://www.youtube.com/watch?v=hJ8IwyhqzD4
@@ -40,3 +40,4 @@
 - got 32 bit buffer overflow attack to work
 - https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
 - outlined features that our app will have
+- created template for tool src files
