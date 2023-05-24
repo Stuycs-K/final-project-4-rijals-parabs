@@ -11,10 +11,10 @@ int main(int argc, char** argv){
 
 // ./tool list-functions <prgm>
 
-// ./tool list-strings <prgm>
 
 
 // IF WE HAVE TIME
+// ./tool list-strings <prgm>
 // these attacks are for either running your own script or modifying the program values by knowing source code
 
 // ./tool custom-payload <prgm> 
