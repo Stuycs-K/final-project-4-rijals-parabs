@@ -8,7 +8,8 @@
 
 GDB
 - info frame: to find out what stack memory is looking like
-- x/200x <address> shows the memory at that specific address
+- x/200xb $esp (or rsp) shows the memory at that specific address
+(examine 200 spaces hexadecimal bytes from the stack pointer)
 
 ## Terms to Know
 In order to understand buffer overflows, we will have to understand the follwoing concepts first:

@@ -33,4 +33,10 @@
 	- https://www.youtube.com/watch?v=TuI2HyG8-iI
 	- https://www.youtube.com/watch?v=hJ8IwyhqzD4&t=8s
 	- https://www.rapid7.com/blog/post/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/
+	- https://www.youtube.com/watch?v=eg0gULifHFI (buffer overflow 64bit arch)
 - worked on PRESENTATION.md
+
+### 05/23/23
+- got 32 bit buffer overflow attack to work
+- https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
+- outlined features that our app will have
