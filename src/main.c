@@ -19,6 +19,4 @@ int main(int argc, char** argv){
 
 // ./tool custom-payload <prgm> 
 
-
-
 }
