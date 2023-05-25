@@ -21,6 +21,10 @@
 - Successfully did a buffer overflow attack
 - Read [this](https://www.comp.nus.edu.sg/~liangzk/cs5231/overflow/lec02-FunctionCall.pdf) for more info on memory addresses
 
+### 5/24/23
+
+- started working on the part of project that shows the address pointers for all the functions in a file
+	- Similar to [this](https://manpages.ubuntu.com/manpages/bionic/man1/readelf.1.html)
 
 ## Salaj Rijal
 
