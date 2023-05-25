@@ -47,3 +47,9 @@
 - https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
 - outlined features that our app will have
 - created template for tool src files
+
+### 05/24/23
+- researched how ptrace works
+	- https://www.linuxjournal.com/article/6210
+	- https://man7.org/linux/man-pages/man2/ptrace.2.html
+- created basic program that can view the eip of a process
