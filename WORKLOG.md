@@ -25,13 +25,15 @@
 ## Salaj Rijal
 
 ### 05/18/23
-- watched [this video](https://www.youtube.com/watch?v=1S0aBV-Waeo) to gain general knowledge on buffer overflow
+- watched videos to gain general knowledge on buffer overflows
+	- https://www.youtube.com/watch?v=1S0aBV-Waeo
 
 ### 05/19/23
 - was absent (AP Exam)
 
 ### 05/22/23
 - was absent (sick)
+- worked on PRESENTATION.md
 - read/watched these resources
 	- https://www.youtube.com/watch?v=YVlTDPhTA9U
 	- https://www.youtube.com/watch?v=hJ8IwyhqzD4
@@ -39,11 +41,15 @@
 	- https://www.youtube.com/watch?v=TuI2HyG8-iI
 	- https://www.youtube.com/watch?v=hJ8IwyhqzD4&t=8s
 	- https://www.rapid7.com/blog/post/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/
-	- https://www.youtube.com/watch?v=eg0gULifHFI (buffer overflow 64bit arch)
-- worked on PRESENTATION.md
+	- https://www.youtube.com/watch?v=eg0gULifHFI
 
 ### 05/23/23
 - got 32 bit buffer overflow attack to work
-- https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
+- read this article: https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
 - outlined features that our app will have
-- created template for tool src files
+- created template for tool's src files
+
+### 05/24/23
+- started work on the finding offset part of our tool
+- created a projected API in README.md
+- added on to PRESENTATION.md
