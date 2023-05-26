@@ -26,6 +26,15 @@
 - started working on the part of project that shows the address pointers for all the functions in a file
 	- Similar to [this](https://manpages.ubuntu.com/manpages/bionic/man1/readelf.1.html)
 
+### 5/25/23
+
+- made function that shows address pointers by running terminal comands
+	- might change it later to not use terminal commands
+		- found this research for if I want to change it later
+		- https://www.geeksforgeeks.org/address-function-c-cpp/
+		- https://stackoverflow.com/questions/21260735/how-to-invoke-function-from-external-c-file-in-c
+
+
 ## Salaj Rijal
 
 ### 05/18/23
