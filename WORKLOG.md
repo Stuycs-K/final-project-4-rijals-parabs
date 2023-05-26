@@ -57,3 +57,4 @@
 - started work on the finding offset part of our tool
 - created a projected API in README.md
 - added on to PRESENTATION.md
+- watched https://www.youtube.com/watch?v=SajNnjeHOWI to understand how to approach finding offset (will use pattern generation)
