@@ -34,6 +34,10 @@
 		- https://www.geeksforgeeks.org/address-function-c-cpp/
 		- https://stackoverflow.com/questions/21260735/how-to-invoke-function-from-external-c-file-in-c
 
+### 5/26/23
+
+- started research on override-return function
+	- mainly just ran buffer overflow attacks to get used to overriding the return manually
 
 ## Salaj Rijal
 
