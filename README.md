@@ -21,7 +21,7 @@ List all the functions and addresses
 ### EXTRA
 
 ```./tool list-strings <prgm>```
-List all the strings in a fil
+List all the strings in a file
 
-```./tool custom-payload <prgm> <tbd>``` 
-Attack where you can input your own script and 
+```./tool custom-payload <prgm> <tbd>```
+Attack where you can input your own script and
