@@ -31,12 +31,12 @@ int main(){
 	if(tracee == 0){
 		//printf("child pid: %d\n", getpid());
 		ptrace(PTRACE_TRACEME, 0, 0, 0);
-		execl("gets", "gets", NULL);
+		execl("./gets", "gets", NULL);
 	}
 	else{
 		struct user_regs_struct regs;
 
-		int res = ptrace(PTRACE_ATTACH, tracee, 0, 0);
+		int res; // = ptrace(PTRACE_ATTACH, tracee, 0, 0);
 		wait(NULL); //wait for attach
 
 		printf("ATTACH returned: %d\n", res);
