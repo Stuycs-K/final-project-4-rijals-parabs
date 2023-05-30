@@ -74,8 +74,11 @@
 - created basic program that can view the eip of a process
 - created template for tool's src files
 
-### 05/24/23
+### 05/25/23
 - started work on the finding offset part of our tool
 - created a projected API in README.md
+
+### 05/26/23
+- tested out ptrace and tried to figure out how it works
 - added on to PRESENTATION.md
 - watched https://www.youtube.com/watch?v=SajNnjeHOWI to understand how to approach finding offset (will use pattern generation)
