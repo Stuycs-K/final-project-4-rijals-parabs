@@ -61,3 +61,6 @@ Segmentation fault basically means that somewhere in your program's execution, y
 
 ![overide_return_pointer](https://www.securitysift.com/wp-content/uploads/2013/12/strcpy_bof_diagram.png)
 
+
+### How Can We Exploit This?
+

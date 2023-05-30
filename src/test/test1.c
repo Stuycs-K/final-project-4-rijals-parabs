@@ -31,9 +31,7 @@ int main(){
 	if(tracee == 0){
 		//printf("child pid: %d\n", getpid());
 		ptrace(PTRACE_TRACEME, 0, 0, 0);
-		//execl("gets", "gets", NULL);
-		printf("child's return address after %p\n", __builtin_return_address(0));
-
+		execl("gets", "gets", NULL);
 	}
 	else{
 		struct user_regs_struct regs;
@@ -43,12 +41,16 @@ int main(){
 
 		printf("ATTACH returned: %d\n", res);
 		error_check(res, "PTRACE_ATTACH");
-		
+	
 		//get return address
 		res = ptrace(PTRACE_GETREGS, tracee, 0, &regs);
 		printf("GETREGS returned: %d\n", res);
 		error_check(res, "GET_REGS");
+		printf("eax returned: %lx\n", regs.eax);
+		printf("eip returned: %lx\n", regs.eip);
+		printf("ebp returned: %lx\n", regs.ebp);
 		printf("esp returned: %lx\n", regs.esp);
+
 
 		//resume execution
 		ptrace(PTRACE_CONT, tracee, 0, 0);		
