@@ -36,6 +36,7 @@
 
 ### 5/26/23
 
+- was absent
 - started research on override-return function
 	- mainly just ran buffer overflow attacks to get used to overriding the return manually
 
