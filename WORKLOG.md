@@ -40,6 +40,10 @@
 - started research on override-return function
 	- mainly just ran buffer overflow attacks to get used to overriding the return manually
 
+### 5/30/23
+
+- finalized the function finding part of our project
+
 ## Salaj Rijal
 
 ### 05/18/23
