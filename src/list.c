@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void get_functions(char* program_name){
-  int len = strlen(program_name);
+void get_functions(char* prgrm){
+  int len = strlen(prgrm);
   char cmd[100] = "readelf -s ";
-  strcat(cmd, program_name);
+  strcat(cmd, prgrm);
   strcat(cmd," | awk '($4 == \"FUNC\") && ($3 != 0)'");
   printf("%s\n", cmd);
   system(cmd);
