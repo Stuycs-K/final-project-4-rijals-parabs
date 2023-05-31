@@ -85,3 +85,7 @@
 
 ### 05/29/23
 - continued work on accessing return address of another program using ptrace
+
+### 05/30/23
+- researched ptrace more (its very complicated)
+- researched pattern matching
