@@ -7,6 +7,5 @@ void get_functions(char* prgrm){
   char cmd[100] = "readelf -s ";
   strcat(cmd, prgrm);
   strcat(cmd," | awk '($4 == \"FUNC\") && ($3 != 0)'");
-  printf("%s\n", cmd);
   system(cmd);
 }
