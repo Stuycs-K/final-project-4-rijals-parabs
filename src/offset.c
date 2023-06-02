@@ -8,8 +8,6 @@
 #include <sys/types.h>
 #include <sys/user.h>
 
-void 
-
 void print_pattern(){
 }
 
