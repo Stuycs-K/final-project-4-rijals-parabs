@@ -1,3 +1,7 @@
+# Homework
+
+The homework files can be found in the **homework** directory. To compile them run the command ```./compile-vulnerable.sh <filename> <compileFilename>```.
+
 ## Part 1: Learn the Tool
 - List all the functions using the tool.
 ___
