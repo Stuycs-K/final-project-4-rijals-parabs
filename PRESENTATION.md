@@ -4,68 +4,54 @@
 For our presentation we will be discussing buffer overflow attacks. Since there are many different types of buffer overflow attacks, we will be focusing on a very specific type of attack that involves the stack and function addresses.
 
 ## How Data is Stored in C
-Before we discuss how  attack works, we will need to breifly go over how the call stack works.
-
-A stack is datastructure that follows the FILO paradigm (first-in last-out). As you might have already deduced, the call stack follows a very similar rule. The call stack is a specific type of stack datastructure that stores the function calls of a program. Whenver a new function is called the following occurs:
-- New stack frame is created and the EBP and ESPs
-- Return address to previous call stack is added at the end
+Before we discuss how attack works, we will need to breifly go over how memory works. Here is a diagram that provides a general overview:
 
 <img class="img-fluid" src="https://media.geeksforgeeks.org/wp-content/uploads/memoryLayoutC.jpg" alt="img-verification" height=280 width=342>
 
+*Note how the stack grows from high memory addresses to low memory addresses.*
+
+Since we are focusing on stack based buffer overflow attacks, we will need to familiarize ourselves with the call stack. A stack in general is a datastructure that follows the FILO paradigm. A call stack is very similar. Everytime you call a function a `stack-frame` is pushed onto the stack and at the end of a function call the stack-frame is popped out. Here is a helpful diagram:
 
 ![Stack Frame](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Call_stack_layout.svg/342px-Call_stack_layout.svg.png)
 
-As
-- grows from high memory address to low memory address
+*Note how every stack has a return address. This address points back to the calling stack-frame*
 
-## Exploiting Stacks in a Buffer Overflow
+## Overriding the Call Stack
+Most buffer overflow attack are based on overriding the return address. The return address lets the call stack know what instruction to execute next. If an attacker is able to control the value of this address, they are able to control the execution of a program.
+
 Lets say you have this C program:	
 ```c
 #include <string.h>
 #include <stdio.h>
 int main(int argc, char** argv){
 	char buf[20];
-	strcpy(buf, argv[1]);
-	printf("%s\n", buf);
+	gets(buf);
 }
 ```
 
-In short, what this program does is take a command line argument and then copy it onto a buffer of size 20.
-
-When you compile it and run it using this command:
-```
-./program Hello
-```
-You will get the following output:
-```
-Hello
-```
-
-Lets say you input more characters than what the buffer can stores:
-```
-./program AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-```
-You will get an output that looks something like this:
-```
-....
-Segmentation fault
-```
-
-Segmentation fault basically means that somewhere in your program's execution, your program did something it wasnt allowed to do. In this case what happened was that when you initially overrode the buffer, you overrode the return pointer.
+When you compile and run this program, one of the first things that will happen is that 20 bytes of memory will be allocated to `buf`. Then the function `gets` (never use this function btw) will prompt the user for input. If the user specifies an input that is 20 bytes or less, the program will exit normally. However, if the user is malicious and inputs more than 20 bytes, then the extra input will override other areas of the call stack. Here is a visualization:
 
 <img src="https://www.securitysift.com/wp-content/uploads/2013/12/strcpy_bof_diagram.png" height=320 width=400>
 
+User inputs with sizes greater than what the buffer can hold will leek onto other parts of memory which include the function paramers, other local variables and even the return address.
 
 ## How Can We Exploit This?
 
-As you can see from the diagram above, it is possible to overwrite the return address. In this example it was just overwritten with a bunch of As, but if we overwrite it with something less nonsensical we will be able to access things that we normally shouldn't be able to.
+In the example above the return address was overwritten by a bunch of As. If we overwrite it with something less nonsensical we will be able to do things that we normally shouldn't be able to. Let's try to do this for this [vulnerable program](demo/vuln).
+
+First lets run it:
+```
+./vuln
+```
+
+Segmentation fault basically means that somewhere in your program's execution, your program did something it wasnt allowed to do. In this case what happened was that when you initially overrode the buffer, you overrode the return pointer.
 
 
 
 
 By changing the return address we can run different functions by replacing the original return address with the address of those functions. This can be used for accessing other functions in a file or for accessing functions from programs in other parts a computer storage. 
 
-## Demo
+## Demo of our Tool
 
 For this demo we have a file prepared with a few functions in it. When the file is run it asks for a string and then prints out the address that the function tries to access. 
 
