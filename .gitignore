@@ -2,6 +2,7 @@
 *.d
 .nfs*
 tool
+flag.txt
 
 # Object files
 *.o
