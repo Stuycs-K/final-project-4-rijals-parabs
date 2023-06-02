@@ -1,26 +1,66 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 #include <unistd.h>
 #include <fcntl.h>
 
 #include <sys/wait.h>
-#include <sys/ptrace.h>
 #include <sys/types.h>
-#include <sys/user.h>
 
+#define PATTERN_SIZE 500
 #define READ 0
 #define WRITE 1
 
-void input_pattern(int len){
-	printf("hello world!\n");
+char* get_eip(){
+	FILE* fp = popen("dmesg | grep -oP \"ip .* sp\" | sed \"s/\\(ip \\)\\(.*\\)\\( sp\\)/\\2/g\" | tail -n1", "r");
+	char* eip = (char*)calloc(9, 1);
+	fread(eip, 1, 8, fp); //this one doesnt matter
+	fread(eip, 1, 8, fp);
+	return eip;
 }
+
+char* generate_pattern(int len){
+	char* pattern = (char*)calloc(len+2, 1);
+	//generate the pattern here
+	int i = 0;
+	char cur_byte[] = "\x41\x41\x41\x41\x00";
+	//65-122
+	while(i < len){
+		strcat(pattern, cur_byte);
+		if(++cur_byte[3] >= 122){
+			cur_byte[3] = 65;
+			if(++cur_byte[2] >= 122){
+				cur_byte[2] = 65;
+				if(++cur_byte[1] >= 122){
+					cur_byte[1] = 65;
+					if(++cur_byte[0] >= 122){
+						printf("pattern generation exceeded inital buffer\n");
+						exit(1);
+					}
+				}
+			}
+		}
+		i+=4;
+	}
+	pattern[len] = '\n';
+	return pattern;
+}
+
+int calculate_offset(char* pattern, char* eip){
+	int offset = 0;
+	int eipInt = (int) strtol(eip, NULL, 16);
+	while( eipInt != *((int*)(pattern+offset)) ){
+		offset += 1;
+	}
+	return offset;
+}
+
 
 void find_offset(char* prgrm){
 	//setup pipes
 	int pipes[2];
 	pipe(pipes);
-	int fd = open("test.out", O_WRONLY | O_CREAT);
 
 	int child = fork();
 	
@@ -29,6 +69,7 @@ void find_offset(char* prgrm){
 		//redirect stdin
 		close(pipes[WRITE]);
 		dup2(pipes[READ], STDIN_FILENO);
+		printf("running targeted program...\n=========================================\n\n");
 
 		char cmd[10000] = "./";
 		strcat(cmd, prgrm);
@@ -37,24 +78,23 @@ void find_offset(char* prgrm){
 
 	// PARENT
 	else {
-		//redirect stdout
+		//send pattern to child process
 		close(pipes[READ]);
-		int tmp = dup(STDOUT_FILENO);
-		dup2(fd, STDOUT_FILENO);
+		char* pattern = generate_pattern(PATTERN_SIZE);
+		write(pipes[WRITE], pattern, strlen(pattern));
 
-		//send the pattern payload
-		input_pattern(100);
-
-		//revert stdout
-		dup2(tmp, STDOUT_FILENO);
-
-		printf("got here!\n");
-		//get the offset
+		//wait for program to crash
 		int status;
 		wait(&status);
 		while( !WIFEXITED(status) ){
 			wait(&status);
 		}
-		printf("program crashed!\n");
+		//printf("program crashed!\n");
+
+		//calculate the offset
+		char* eip = get_eip();
+		printf("eip: %s\n", eip);
+		int offset = calculate_offset(pattern, eip);
+		printf("\n============================================\nTHE OFFSET IS: %d\n", offset);
 	}
 }
