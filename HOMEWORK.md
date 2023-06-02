@@ -1,8 +1,13 @@
-## Part 1 (Walkthrough)
-- list all the functions
-- what is the offset
-- ovveride the offset to point to the win function, what is the flag?
+## Part 1: Learn the Tool
+- List all the functions using the tool.
+___
 
-## Part 2 (Challenge)
-(maybe add more steps if time)
-- here is a c program, override the return
+- What is the offset for the return address.
+___
+
+- Try overriding the return address to point to the `get_flag` function. What is the output?
+___
+
+## Part 2: Challenge
+- Try to find the flag in this file?
+___
