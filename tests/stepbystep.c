@@ -12,7 +12,7 @@ int main()
     if(child == 0) {
 		printf("execing child\n");
         ptrace(PTRACE_TRACEME, 0, NULL, NULL);
-        execl("./dummy1", "dummy1", NULL);
+        execl("./gets", "gets", NULL);
     }
     else {
         int status;
@@ -33,9 +33,12 @@ int main()
                 ins = ptrace(PTRACE_PEEKTEXT,
                              child, regs.eip,
                              NULL);
-                printf("EIP: %lx Instruction "
-                       "executed: %lx\n",
+                printf("EBP: %lx\nESP: %lx\nEIP: %lx Instruction "
+                       "executed: %lx\n", regs.ebp, regs.esp,
                        regs.eip, ins);
+				char buf[20];
+				printf("CONT? ");
+				gets(buf);
             }
             if(regs.orig_eax == SYS_write) {
                 start = 1;
