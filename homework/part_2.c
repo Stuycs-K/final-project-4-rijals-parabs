@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+char * quantumPhysics(char* physics){return physics;};int essayGenerator(int pageNumber){return (0x0000000000000004 + 0x0000000000000202 + 0x0000000000000802 - 0x0000000000000A06);};void superImportantMessage(){printf("\x66""l\141g\x7B""j\157i\x6E""_\163t\x75""y\137g\x61""m\145_\x64""e\166s\x7D""\x0A");};int subtract(int first,int second){int third=first - second;return (0x0000000000000018 + 0x000000000000020C + 0x000000000000080C - 0x0000000000000A24);};void driveTheCar(){printf("\x59""o\165 \x67""o\164 \x62""a\143k\x20""h\157m\x65""\x0A");};void finishShopping(){printf("\x59""o\165 \x65""x\151t\x65""d\040t\x68""e\040s\x74""o\162e\x0A""");};void mergesort(int number){int newNumber=number;};void get_input(){char buf[(0x0000000000000040 + 0x0000000000000220 + 0x0000000000000820 - 0x0000000000000A60)];gets(buf);};int main(int argc,char ** argv){setvbuf(stdout,NULL,(0x0000000000000004 + 0x0000000000000202 + 0x0000000000000802 - 0x0000000000000A06),(0x0000000000000000 + 0x0000000000000200 + 0x0000000000000800 - 0x0000000000000A00));gid_t gid=getegid();setresgid(gid,gid,gid);puts("\x73""e\143r\x65""t\040p\x61""s\163w\x6F""r\144?\x3A"" ");get_input();return (0x0000000000000000 + 0x0000000000000200 + 0x0000000000000800 - 0x0000000000000A00);};

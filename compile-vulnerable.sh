@@ -6,4 +6,3 @@ then
 else
 	gcc -m32 $1 -o a.out -fno-stack-protector -g -z execstack -no-pie
 fi
-
