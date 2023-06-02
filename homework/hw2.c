@@ -13,7 +13,7 @@ int essayGenerator(int pageNumber){
 }
 
 void superImportantMessage(){
-  printf("Join Stuy Game Devs");
+  printf("flag{join_stuy_game_devs}");
 }
 
 void main(int argc, char **argv){

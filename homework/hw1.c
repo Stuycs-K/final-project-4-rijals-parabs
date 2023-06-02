@@ -5,7 +5,7 @@
 #include <sys/types.h>
 
 void getFlag(){
-  printf("Cranberry");
+  printf("flag{cranberry}");
 }
 
 void main(int argc, char **argv){
