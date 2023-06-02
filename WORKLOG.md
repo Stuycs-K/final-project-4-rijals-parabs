@@ -48,6 +48,12 @@
 
 - made draft of override-return, need to test it more.
 
+### 6/1/23
+
+- added override-return and help functions.
+- worked on presentation with Salaj
+- made drafts of homework files for attacking
+
 
 ## Salaj Rijal
 
