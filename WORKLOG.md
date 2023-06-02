@@ -99,6 +99,10 @@
 - researched ptrace more (its very complicated)
 - researched pattern matching
 
-## 06/1/23
+## 05/31/23
+- made the makefile
+- integrated all the different functions
+
+### 06/1/23
 - worked on the presentation and homework files
 - finished code obfuscation (realized that PTRACE wont work so went with terminal command and pattern generation option)
