@@ -2,8 +2,7 @@
 
 if [ "$2" ]
 then
-	gcc -m32 $1 -o $2 -fno-stack-protector -g -z execstack -no-pie
+	gcc -m32 $1 -o $2 -fno-stack-protector -g -w -z execstack -no-pie
 else
-	gcc -m32 $1 -o a.out -fno-stack-protector -g -z execstack -no-pie
+	gcc -m32 $1 -o a.out -fno-stack-protector -g -w -z execstack -no-pie
 fi
-
